@@ -13,7 +13,7 @@ import { ClienteService } from '../cliente.service';
 export class EditarComponent implements OnInit {
 
   cliente: Cliente;
-  private message:"String";
+  private message:String;
   private className:String;
 
 
@@ -39,12 +39,12 @@ export class EditarComponent implements OnInit {
   onSubmit() {
     this.service.update(this.editForm.value)
       .subscribe( data => {
-        //this.router.navigate(['clientes']);
+        this.router.navigate(['clientes']);
       },
-      /*(responses:HttpErrorResponse) =>{
+      (responses:HttpErrorResponse) =>{
         this.className="alert alert-danger"
-        this.message=responses.error;
-      }*/
+        this.message ="Revisa muy bien su cedula!";
+      }
     );
   }
 
